@@ -1,7 +1,6 @@
 import React from 'react';
-import Stopwatch from '../components/Stopwatch';
-import Counter from '../components/Counter';
-import Stats from '../components/Stats';
+import Player from '../components/Player';
+import Header from '../components/Header';
 import AddPlayerForm from '../components/AddPlayerForm';
 
 const INITIAL_STATE = {
@@ -62,44 +61,5 @@ const Scoreboard = React.createClass({
     );
   }
 });
-
-// Move to components/Header.js
-// ----------------------------------------------
-function Header(props) {
-  return (
-    <div className="header">
-      <Stats players={props.players} />
-      <h1>Scoreboard</h1>
-      <Stopwatch />
-    </div>
-  );
-}
-
-Header.propTypes = {
-  players: React.PropTypes.array.isRequired,
-};
-
-// Move to components/Player.js
-// ----------------------------------------------------------------------
-function Player(props) {
-  return (
-    <div className="player">
-      <div className="player-name">
-        <a className="remove-player" onClick={props.onRemove}>✖</a>
-        {props.name}
-      </div>
-      <div className="player-score">
-        <Counter onChange={props.onScoreChange} score={props.score} />
-      </div>
-    </div>
-  );
-}
-
-Player.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  score: React.PropTypes.number.isRequired,
-  onRemove: React.PropTypes.func.isRequired,
-  onScoreChange: React.PropTypes.func.isRequired,
-};
 
 export default Scoreboard;
