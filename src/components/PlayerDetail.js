@@ -1,22 +1,22 @@
 import React, { PropTypes } from 'react';
 
-const PlayerDetail = ({  }) => {
-  if( ){
+const PlayerDetail = ({ selectedPlayer }) => {
+  if(selectedPlayer){
     return (
       <div>
-        <h3>{ }</h3>
+        <h3>{selectedPlayer.name}</h3>
         <ul>
           <li>
             <span>Score: </span> 
-            { }
+            {selectedPlayer.score}
           </li>
           <li>
             <span>Created: </span> 
-            { }
+            {selectedPlayer.created}
           </li>
           <li>
             <span>Updated: </span> 
-            { }
+            {selectedPlayer.updated}
           </li>        
         </ul>
       </div>
@@ -27,5 +27,8 @@ const PlayerDetail = ({  }) => {
   }
 };
 
+PlayerDetail.propTypes = {
+  selectedPlayer: PropTypes.object
+};
 
 export default PlayerDetail;
