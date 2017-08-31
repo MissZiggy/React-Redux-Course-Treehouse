@@ -4,9 +4,9 @@ export default class Stopwatch extends Component {
   state = {
     running: false,
     previouseTime: 0,
-    elapsedTime: 0,    
+    elapsedTime: 0,
   };
-  
+
   componentDidMount() {
     this.interval = setInterval(this.onTick);
   }
@@ -14,7 +14,7 @@ export default class Stopwatch extends Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
-  
+
   onStart = () => {
     this.setState({
       running: true,
@@ -44,9 +44,9 @@ export default class Stopwatch extends Component {
       });
     }
   };
-  
+
   render() {
-    var seconds = Math.floor(this.state.elapsedTime / 1000);
+    const seconds = Math.floor(this.state.elapsedTime / 1000);
     return (
       <div className="stopwatch" >
         <h2>Stopwatch</h2>
@@ -58,6 +58,6 @@ export default class Stopwatch extends Component {
         }
         <button onClick={this.onReset}>Reset</button>
       </div>
-    )
-  } 
+    );
+  }
 }

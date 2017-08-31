@@ -10,10 +10,10 @@ const Header = props => {
       <Stopwatch />
     </div>
   );
-}
+};
 
 Header.propTypes = {
-  players: PropTypes.array.isRequired,
+  players: PropTypes.array.isRequired
 };
 
 export default Header;

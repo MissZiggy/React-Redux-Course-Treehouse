@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 
 const Stats = props => {
   const playerCount = props.players.length;
-  const totalPoints = props.players.reduce(function(total, player) {
+  const totalPoints = props.players.reduce((total, player) => {
     return total + player.score;
   }, 0);
 
@@ -19,11 +19,11 @@ const Stats = props => {
         </tr>
       </tbody>
     </table>
-  )
+  );
 }
 
 Stats.propTypes = {
-  players: PropTypes.array.isRequired,
+  players: PropTypes.array.isRequired
 };
 
 export default Stats;

@@ -14,10 +14,12 @@ export const removePlayer = index => {
   };
 };
 
-export const updatePlayerScore = (index, score) => {
-  return {
-    type: PlayerActionTypes.UPDATE_PLAYER_SCORE,
-    index,
-    score
+export const updatePlayerScore = (index, score)  => {
+   return {
+     type: PlayerActionTypes.UPDATE_PLAYER_SCORE,
+     index,
+     score
   };
 };
+
+
